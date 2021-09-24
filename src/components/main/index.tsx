@@ -17,7 +17,9 @@ interface ImovieData{
     logo_img: string,
     type: string,
     parental_rating: number,
-    category: [],
+    category: [{
+        name: string
+    }],
     year: number,
     duration: number,
     session: number,
@@ -47,7 +49,8 @@ const MainComponent: React.FC = () => {
     }, [])
 
     useEffect(() => {
-        api.get('/films').then((response) => {
+        api.get('/films')
+        .then((response) => {
             console.log(response)
             setDataMovie(response.data)
         })
@@ -55,10 +58,8 @@ const MainComponent: React.FC = () => {
     }, [])
 
 
-
-    //TRES MANEIRAS DIFERENTES DE FAZER UMA CHAMADA DE FUNÇÃO O USECALLBACK É UMA FUNÇÃO DO REACT JA TE ENSINEI VARIAS VEZES NAO VOU FALAR DE NOVO, PROCURA NA INTERNET 
     // SE VC QUISER SABER DE VERDADE O QUE ELA FAZ, CRIANDO UMA CONSTANTE POR ARROW FUNCTION NA ULTIMA, E A PRIMEIRA CONVENCIONAL ATRAVES DE UMA FUNÇÃO SINCRONA
-    //posso fazer assim tambem, ae vc tem que pesquisar o que é async e pra que serve tambem é importante, não vou conseguir te explicar tão bem quanto se vc pesquisar
+
      function firstPos(pos:any){
         if (pos === 0)
         return pos= 0.0001
@@ -105,7 +106,7 @@ const MainComponent: React.FC = () => {
                     height= '100vh'
                     playing= {true}
                     loop= {true}
-                />            
+                />
             </div>
              
             <div className='arrowThumbnail previous'><IoIosArrowBack /></div>
@@ -126,7 +127,7 @@ const MainComponent: React.FC = () => {
                             width= '346px'
                             height= '194px'
                             playing= {true}
-                            loop= {true}
+                            loop= {false}
                         />            
                     </div>
                     <div className='sectionPoser' style={{backgroundImage: `url(${myMovie.poster_img})`}}></div>
@@ -137,7 +138,8 @@ const MainComponent: React.FC = () => {
                             <IoMdAddCircleOutline />
                             <BiLike />
                             <BiDislike />
-                            <a onClick={() => HandleOpenDesciption(myMovie.id)}><AiOutlineDownCircle /></a>
+                            <AiOutlineDownCircle />
+                            {/* <a onClick={() => HandleOpenDesciption(myMovie.id)}><AiOutlineDownCircle /></a> */}
                         </div>
                         <div className='types'>
                             <span>{myMovie.session} temporadas</span>
