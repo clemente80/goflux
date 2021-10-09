@@ -10,7 +10,8 @@ export const Content = styled.div`
   height: 50px;
   background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .4));
   backdrop-filter: blur(10px);
-  /* box-shadow: 0 2.5px 10px rgba(256, 256, 256, .25); */
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  box-shadow: 0 2.5px 25px rgba(0, 0, 0, 1);
   z-index: 10;
   
   div:first-child {

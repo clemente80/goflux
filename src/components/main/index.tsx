@@ -45,7 +45,7 @@ const MainComponent: React.FC = () => {
         const posLeft = document.getElementById('thumbnail' + a)?.offsetLeft
         const comp = document.getElementById('thumbnail' + a)?.clientWidth
         const alt = document.getElementById('thumbnail' + a)?.clientHeight
-        console.log('top: '+posTop, ' left: '+posLeft, 'width: '+comp, 'height: '+alt)
+        console.log('pos: '+a, 'top: '+posTop, ' left: '+posLeft, 'width: '+comp, 'height: '+alt)
     }, [])
 
     useEffect(() => {
@@ -138,8 +138,8 @@ const MainComponent: React.FC = () => {
                             <IoMdAddCircleOutline />
                             <BiLike />
                             <BiDislike />
-                            <AiOutlineDownCircle />
-                            {/* <a onClick={() => HandleOpenDesciption(myMovie.id)}><AiOutlineDownCircle /></a> */}
+                            {/* <AiOutlineDownCircle /> */}
+                            <a onClick={() => HandleOpenDesciption(myMovie.id)}><AiOutlineDownCircle /></a>
                         </div>
                         <div className='types'>
                             <span>{myMovie.session} temporadas</span>
