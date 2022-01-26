@@ -6,12 +6,10 @@ import MainComponent from './components/main'
 
 function App() {
   return (
-    <>
     <Container>
       <HeaderComponent />
       <MainComponent />
     </Container>
-    </>
   )
 }
 
