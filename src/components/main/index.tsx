@@ -1,13 +1,13 @@
 import React from 'react'
-import {Container} from './styles'
+import {ContainerMain} from './styles'
 
 const MainComponent: React.FC = () => {
     return(
-        <Container>
+        <ContainerMain>
             <div>
                 Teste
             </div>
-        </Container>
+        </ContainerMain>
     )
 }
 
